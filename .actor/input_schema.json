@@ -1,5 +1,7 @@
 {
+  "schemaVersion": 1,
   "title": "IT Job Intelligence Input",
+  "description": "Configure the IT job crawl.",
   "type": "object",
   "properties": {
     "searchQuery": {
@@ -35,22 +37,9 @@
       "editor": "requestListSources",
       "default": [],
       "prefill": [
-        {
-          "url": "https://www.indeed.com/jobs?q=cloud+engineer&l=United+States"
-        }
-      ],
-      "items": {
-        "type": "object",
-        "properties": {
-          "url": {
-            "type": "string"
-          }
-        }
-      }
+        {"url": "https://www.indeed.com/jobs?q=cloud+engineer&l=United+States"}
+      ]
     }
   },
-  "required": [
-    "searchQuery",
-    "location"
-  ]
+  "required": ["searchQuery", "location"]
 }

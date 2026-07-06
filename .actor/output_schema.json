@@ -1,84 +1,12 @@
 {
+  "$schema": "https://apify.com/schemas/v1/output.ide.json",
+  "actorOutputSchemaVersion": 1,
   "title": "IT Job Intelligence Output",
-  "type": "object",
   "properties": {
-    "jobPostings": {
-      "type": "array",
-      "title": "Job postings",
-      "description": "Parsed job postings extracted from listing/detail pages.",
-      "items": {
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": "string"
-          },
-          "company": {
-            "type": "string"
-          },
-          "location": {
-            "type": "string"
-          },
-          "salary": {
-            "type": "string"
-          },
-          "remote": {
-            "type": "boolean"
-          },
-          "postedAt": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string"
-          },
-          "skills": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      }
-    },
-    "skillsSnapshots": {
-      "type": "array",
-      "title": "Skills snapshots",
-      "description": "Aggregated skills snapshot per crawled page.",
-      "items": {
-        "type": "object",
-        "properties": {
-          "url": {
-            "type": "string"
-          },
-          "pageType": {
-            "type": "string"
-          },
-          "skillCounts": {
-            "type": "object"
-          },
-          "jobCount": {
-            "type": "integer"
-          },
-          "crawledAt": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "stats": {
-      "type": "object",
-      "title": "Stats",
-      "description": "Crawl summary statistics.",
-      "properties": {
-        "requestCount": {
-          "type": "integer"
-        },
-        "jobPostingsExtracted": {
-          "type": "integer"
-        },
-        "snapshotsExtracted": {
-          "type": "integer"
-        }
-      }
+    "results": {
+      "type": "string",
+      "title": "Results",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
     }
   }
 }
