@@ -1,0 +1,56 @@
+{
+  "title": "IT Job Intelligence Input",
+  "type": "object",
+  "properties": {
+    "searchQuery": {
+      "type": "string",
+      "title": "Search query",
+      "description": "Job search keywords, e.g. 'cloud engineer' or 'site reliability engineer'.",
+      "editor": "textfield"
+    },
+    "location": {
+      "type": "string",
+      "title": "Location",
+      "description": "Location filter for job search, e.g. 'United States' or 'Remote'.",
+      "editor": "textfield"
+    },
+    "maxJobs": {
+      "type": "integer",
+      "title": "Max jobs",
+      "description": "Maximum number of job postings to extract.",
+      "editor": "number",
+      "default": 50
+    },
+    "maxPages": {
+      "type": "integer",
+      "title": "Max pages",
+      "description": "Maximum number of pagination pages to follow.",
+      "editor": "number",
+      "default": 3
+    },
+    "urls": {
+      "type": "array",
+      "title": "Start URLs",
+      "description": "Listing/detail page URLs to crawl. If empty, the actor can construct search URLs from searchQuery and location.",
+      "editor": "requestListSources",
+      "default": [],
+      "prefill": [
+        {
+          "url": "https://www.indeed.com/jobs?q=cloud+engineer&l=United+States"
+        }
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "searchQuery",
+    "location"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "it-job-intelligence",
+  "title": "IT Job Intelligence",
+  "description": "Aggregate IT/cloud job postings from public search pages and extract skills/tools, location, salary, remote flag, posting date, and a skills snapshot per page.",
+  "version": "1.0",
+  "meta": {
+    "template": "python"
+  },
+  "pricing": {
+    "payPerEvent": {
+      "events": [
+        { "name": "job_posting", "pricePerUnit": 6 },
+        { "name": "skills_snapshot", "pricePerUnit": 12 }
+      ]
+    },
+    "pricingInfo": "Pay-per-Event: $0.06 per job_posting and $0.12 per skills_snapshot"
+  },
+  "input": ".actor/input_schema.json",
+  "output": ".actor/output_schema.json"
+}
